@@ -115,7 +115,11 @@ Hit the Compare and create a Pull Request button and create you first Pull Reque
 
 The repository currently looks like this:
 
+![1](diagrams/1.png)
+
 Now, go to Github to your Pull Request and click Merge pull request. Now you branch got merged to master. The repository now looks like this:
+
+![2](diagrams/2.png)
 
 Your changes has now been merged to master, so you don't need your branch anymore. On the Pull Request page, click Delete branch.
 
@@ -140,7 +144,6 @@ Let's recap what we've learned so far:
 * In Github, you know how to create a Pull Request from your branch and how to merge it
 
 From the five step branching model, you already master 3 steps: **Branch**, **Pull request** and **Merge**. Next we learn how to **Rebase**.
-
 
 ### Updating your branch
 
@@ -198,6 +201,8 @@ Go to Github and make a new Pull request, but do not merge it this time.
 
 Let's recap what we just did: We created two branches, `edit-description` and `edit-title`. We did Pull request for both of them. The repository currently looks like this:
 
+![3](diagrams/3.png)
+
 Now go to Github and merge the `edit-title` Pull request.
 
 On command-line, go to master and pull the changes
@@ -208,6 +213,8 @@ git pull
 ```
 
 Now the repository looks like this:
+
+![4](diagrams/4.png)
 
 Now the `edit-description` branch is lagging behind. There are new changes in master, that are not included in `edit-description` branch. It's time to rebase.
 
@@ -226,6 +233,8 @@ git rebase master
 ```
 
 Now the repository looks like this:
+
+![5](diagrams/5.png)
 
 The `edit-description` has now a new base. It has been placed on top of the latest changes on the master branch. Open the `index.html` file. You can see that the title includes now `and Github`, the change that was made in the `edit-title` branch.
 
@@ -281,6 +290,8 @@ git pull
 ```
 
 Your repository looks now like this:
+
+![6](diagrams/6.png)
 
 Yet again, we see that there's one branch, `edit-description` lagging behing. Let's rebase it.
 
@@ -363,6 +374,8 @@ git push --force
 ```
 
 And that's it! Now you have resolved a merge conflict. `edit-description` is now ready to be merged to master. Your repository looks now like this:
+
+![6](diagrams/6.png)
 
 ### Final recap
 

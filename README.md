@@ -34,6 +34,8 @@ At Sharetribe, we you so called Github branching model. The model is pretty simp
 1. **Review:** When the feature is ready, ask a fellow teammate for a review. Fix the issues the reviewer found, if any
 1. **Merge:** When the reviewer gives green light, merge the Pull Request to master.
 
+![Branching model](diagrams/branchmodel.png)
+
 A rule of thumb is that you should **never brake the master branch**. Master branch goes always to production.
 
 ## Learning goals

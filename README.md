@@ -2,9 +2,9 @@
 
 # Just enought Git for a non-developer
 
-At Sharetribe almost everyone is somehow dealing with the code. That's the spirit of a small tech startup. We use Git and Github for source code management.
+At Sharetribe almost everyone is somehow dealing with code. That's the spirit of a small tech startup. We use Git and Github for source code management.
 
-This article was meant to be an internal document for our non-developers who have to small code changes every now and then, namely our designer and analytics expert. However, as this stuff might interest others, I decided to make the article in a form of a blog post.
+This article was meant to be an internal document for our non-developers who have to small code changes every now and then, namely our designer and analytics expert. However, as this stuff might interest others, I decided to write the article in a form of a blog post.
 
 The best way to learn is by doing. That's why this tutorial contains also an interactive part. The tutorial can be found here https://github.com/sharetribe/just-enough-git. Feel free to make your own fork.
 
@@ -22,25 +22,25 @@ The article concentrates on branching. I expect that you already have the basic 
 * You know how to `git pull` others' commits from Github
 * You know what is a code branch, although you may not be familiar with them
 
-That said, you already know quite a lot! However, to be efficient with Git, there are still a couple tricks you need to learn.
+That said, you already know quite a lot! However, to be efficient with Git, there are still a couple of tricks you need to learn.
 
 ## The branching model.
 
-At Sharetribe, we you so a simple and minimalistic branching model, which goes like this:
+At Sharetribe, we use a simple and minimalistic branching model, which works like this:
 
 1. **Branch:** When you start working with a new feature/bug fix/document improvement/anything, you create a new branch.
 1. **Pull Request:** As soon as possible, even before the feature is ready, push the branch to Github and create a Pull Request, so that others can see what you are up to.
 1. **Rebase:** Make sure, that your branch is up to date. If not, rebase.
-1. **Review:** When the feature is ready, ask a fellow teammate for a review. Fix the issues the reviewer found, if any
+1. **Review:** When the feature is ready, ask a fellow teammate to do a review. Fix the issues the reviewer found, if any
 1. **Merge:** When the reviewer gives green light, merge the Pull Request to master.
 
 ![Branching model](diagrams/branchmodel.png)
 
-A rule of thumb is that you should **never brake the master branch**. Master branch goes always to production.
+A rule of thumb is that you should **never break the master branch**. Master branch is deployed to production.
 
 ## Learning goals
 
-In order to follow that branching model, you need to learn a couple new Git skills:
+In order to follow that branching model, you need to learn a couple of new Git skills:
 
 * Your git is properly configured
 * You know how to create a branch
@@ -51,7 +51,7 @@ In order to follow that branching model, you need to learn a couple new Git skil
 
 ## Git configurations
 
-In order to work efficiently with the branching model, you need to have following git configurations set. Open command-line and type:
+In order to work efficiently with the branching model, you need to have the following git configurations set. Open command-line and type:
 
 ```
 git config --global push.default current
@@ -123,7 +123,7 @@ Now, go to Github to your pull request and click **Merge pull request**. Now you
 
 ![2](diagrams/2.png)
 
-Your changes has now been merged to master, so you don't need your branch anymore. On the pull request page, click **Delete branch**.
+Your changes have now been merged to master, so you don't need your branch anymore. On the pull request page, click **Delete branch**.
 
 Now back to command-line. Jump back to master branch.
 
@@ -131,7 +131,7 @@ Now back to command-line. Jump back to master branch.
 git checkout master
 ```
 
-If you now take a look at `index.html` you can see that your latest changes are not there yet. That's because locally your `add-description` branch and `master` are still separated. We only did the merge on Github. Thus, you need to pull the newest changes from Github.
+If you now take a look at `index.html` you can see that your latest changes are not yet there. That's because locally your `add-description` branch and `master` are still separated. We only did the merge on Github. Thus, you need to pull the newest changes from Github.
 
 ```
 git pull
@@ -163,7 +163,7 @@ Go and edit the `index.html` file, so that the description block looks like foll
 <p class="paragraph">This is how you rebase like a rockstar!</p>
 ```
 
-When your ready, save the file and push the changes to Github.
+When you are ready, save the file and push the changes to Github.
 
 ```
 git add index.html
@@ -171,7 +171,7 @@ git commit
 git push
 ```
 
-Go to Github and make a new pull request, but do not merge it this time.
+Go to Github and make a new pull request, but do not merge it yet.
 
 Now back to the command-line. At the moment you are in `edit-description` branch. Jump back to master:
 
@@ -204,7 +204,7 @@ Go to Github and make a new Pull request, but do not merge it.
 Let's recap what we just did: We created two branches, `edit-description` and `edit-title`. We did Pull request for both of them. The repository currently looks like this:
 
 ![3](diagrams/3.png)
-
+1
 Now go to Github and merge the `edit-title` pull request.
 
 On command-line, go to master and pull the changes
@@ -246,7 +246,7 @@ Push the updated branch to Github. This time we have to force push the branch, b
 git push --force
 ```
 
-**WARNING!** The main purpose of Git is to make sure you never lose any changed you've made. It's damn difficult to screw up things with Git so badly, that someone would lose his day's work. However, `--force` is the only command in Git which allows you to make catastrophical screw ups. So, be careful. Make sure you are in a correct branch when you force push. **NEVER force push on master branch.** **NEVER FORCE PUSH ON MASTER BRANCH**.
+**WARNING!** The main purpose of Git is to make sure you never lose any changes you've made. It's damn difficult to screw up things with Git so badly, that someone would lose his days work. However, `--force` is the only command in Git which allows you to make catastrophical screw ups. So, be careful. Make sure you are in a correct branch when you force push. **NEVER force push on master branch.** **NEVER FORCE PUSH ON MASTER BRANCH**.
 
 **WARNING #2!** You ONLY need to force push after rebase. **Never force push, unless you have just rebased**.
 
@@ -256,7 +256,7 @@ Let's recap:
 * We learned how to `git push --force` changes after rebase
 * We learned that with great `--force` comes a great responsibility.
 
-Sometimes two people edit the exactly same file and same line at the same time. In this situation, git doesn't know which one it should include. This causes so called merge conflict. When you rebase your branch, a conflict may happen. Next you'll learn how to solve a conflict.
+Sometimes two people edit the exactly same file and same line at the same time. In this situation, git doesn't know which one it should include. This causes a so called merge conflict. When you rebase your branch, a conflict may happen. Next you'll learn how to solve a conflict.
 
 ### Resolving conflicts
 
@@ -276,7 +276,7 @@ Edit the `index.html` file, so that the description is following:
 <p class="paragraph">This is how you resolve conflicts like a rockstar!</p>
 ```
 
-When your ready, push the changes to Github.
+When you are ready, push the changes to Github.
 
 ```
 git add index.html
@@ -304,13 +304,13 @@ git checkout edit-description
 git rebase master
 ```
 
-Whou! That did not go smoothly. Git is saying that there's a conflict in `index.html` file:
+Whoa! That did not go smoothly. Git is saying that there's a conflict in `index.html` file:
 
 ```
 CONFLICT (content): Merge conflict in index.html
 ```
 
-You can also see this with status command, type:
+You can also see this with the status command, type:
 
 ```bash
 git status
@@ -341,7 +341,7 @@ Open the `index.html` file in your editor and you will see this:
 >>>>>>> [your commit message]
 ```
 
-Edit the file so that it include both changes and remove lines starting with `<<<<<<<`, `=======` and `>>>>>>>` so that the end result is:
+Edit the file to include both changes by removing lines starting with `<<<<<<<`, `=======` and `>>>>>>>` and merging the sentences. The end result should look like:
 
 ```html
 <p class="paragraph">This is how you rebase and resolve conflicts like a rockstar!</p>
@@ -367,7 +367,7 @@ Now that we are done, we can continue:
 git rebase --continue
 ```
 
-Git moves to the next commit. You may have to resolve any additional conflicts.
+Git moves to the next commit. You may have to resolve additional conflicts.
 
 If anything goes wrong during the rebase, you can always enter `git rebase --abort`. It will cancel the whole rebase process.
 

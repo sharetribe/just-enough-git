@@ -56,30 +56,118 @@ git config --global branch.autosetuprebase always
 
 Now you’re ready to start.
 
-How to create a branch and jump from branch to another.
+# Let the tutorial begin
 
-git checkout is a command which jumps from branch to another. If you give it an option -b, it will create a new branch. Let’s try it.
+Let's get in to action!
 
-git branch -b add-description
+### 1. Fork
 
-Next, type git status
+Go to the tutorial repository in Github, you can find it from https://github.com/sharetribe/just-enough-git. Click "Fork" on the upper right corner. This creates a copy of this tutorial in which you can try things out.
 
+Now, clone the repository to your local machine. On command-line, type:
+
+```
+git clone git@github.com:sharetribe/just-enough-git.git
+cd just-enough-git
+ls
+```
+
+You should now see the content of the repository. There are not that many files, but the one we are interested in is the `index.html` file. Open it in your browser to view the content.
+
+### 2. Let's add description!
+
+Now let's add a description to our website! Do you still remember the branching model? The first thing to do, was **Branch**. So, let's create a new branch.
+
+First, type:
+
+```
 git status
+```
 
-The first line says that you are now in the add-description branch
+From the first line, you see that you are currently on `master` branch.
+
+`git checkout` is a command to jumps from branch to another. If you give it an option -b, it will create a new branch. Let’s try this. Type:
+
+```
+git branch -b add-description
+git status
+```
+
+Congrats! You created a branch. `git status` shows you that you are currently in `add-description` branch.
 
 Let’s make a change to index.html. You can see that there’s a paragraph with class description, but the paragraph doesn’t have any content. Let’s add a description, so that the result is
 
+```
 <p class=“paragraph”>This is how you branch like a rockstar!</p>
+```
 
 Next, use add, commit and push to save and push your changes.
 
+```
 git add index.html
 git commit
 git push
+```
 
 Now, go to your repository at Github. You can see that Github is suggesting you to make a Pull Request.
 
-Hit the Compare and create a Pull Request button and create you first Pull Request
+Hit the Compare and create a Pull Request button and create you first Pull Request.
 
+The repository currently looks like this:
+
+Now, go to Github to your Pull Request and click Merge pull request. Now you branch got merged to master. The repository now looks like this:
+
+Your changes has now been merged to master, so you don't need your branch anymore. On the Pull Request page, click Delete branch.
+
+Now back to command-line. Jump back to master branch.
+
+```
+git checkout master
+```
+
+If you now take a look at `index.html` you can see that your latest changes are not there yet. That's because locally your `add-description` branch and `master` are still separated. We only did the merge on Github. Thus, you need to pull the newest changes from Github.
+
+```
+git pull
+```
+
+Now you can see your changes in place.
+
+Let's recap what we've learned so far:
+
+* `git checkout -b [branchname]` creates a new branch
+* `git checkout [branchname]` jumps to another branch
+* In Github, you know how to create a Pull Request from your branch and how to merge it
+
+### Updating your branch
+
+While you are working in your own branch, others might be pushing their changes to master branch. It's important to update your branch to include these changes. That way you avoid having a huge merge hell after working one week with your own branch.
+
+Now, let's create two new branches from the master branch:
+
+```
+git checkout -b edit-description
+```
+
+Now, edit the `index.html` file, so that the description block looks like following:
+
+```html
+<p class="paragraph">This is how you rebase like a rockstar!</p>
+```
+
+When your ready, push the changes to Github.
+
+```
+git add index.html
+git commit
+git push
+```
+
+Go to Github and make a new Pull request, but do not merge it this time.
+
+Now back to the command-line. At the moment you are in `edit-description` branch. Jump back to master:
+
+```bash
+git checkout master
+```
 

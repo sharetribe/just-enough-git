@@ -256,8 +256,6 @@ Let's recap:
 * We learned how to `git push --force` changes after rebase
 * We learned that with great `--force` comes a great responsibility.
 
-Sometimes two people edit the exactly same file and same line at the same time. In this situation, git doesn't know which one it should include. This causes so called merge conflict. When you rebase your branch, a conflict may happen. Next you'll learn how to solve a conflict.
-
 ### Resolving conflicts
 
 Git is pretty good at merging branches together. However, if two people edit the same part of the same file at the same time, Git doesn't know how to handle it. In this case, you have to manually resolve the conflict.
@@ -295,7 +293,7 @@ git pull
 
 Your repository looks now like this:
 
-![6](diagrams/6.png)
+![5.5](diagrams/55.png)
 
 Yet again, we see that there's one branch, `edit-description`, that is lagging behing. Let's rebase it:
 

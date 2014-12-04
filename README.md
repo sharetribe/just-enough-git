@@ -1,8 +1,10 @@
+(This articla has been posted in Sharetribe blog)
+
 # Just enought Git for a non-developer
 
-In Sharetribe almost everyone has to deal with code. That's the spirit of a small tech startup. We use git and Github for source code management and when dealing with code, you have to have basic skills for using git.
+At Sharetribe almost everyone is somehow dealing with the code. That's the spirit of a small tech startup. We use Git and Github for source code management.
 
-This article was meant to be an internal document for our non-developers who have to deal with code, namely our designer and analytics experts. However, as this stuff migth interest others, the blog post was written.
+This article was meant to be an internal document for our non-developers who have to small code changes every now and then, namely our designer and analytics expert. However, as this stuff might interest others, I decided to make the article in a form of a blog post.
 
 The best way to learn is by doing. That's why this tutorial contains also an interactive part. The tutorial can be found here https://github.com/sharetribe/just-enough-git. Feel free to make your own fork.
 

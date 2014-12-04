@@ -29,7 +29,7 @@ At Sharetribe, we you so called Github branching model. The model is pretty simp
 1. **Branch:** When you start working with a new feature/bug fix/document improvement/anything, you create a new branch.
 1. **Pull Request:** As soon as possible, even before the feature is ready, push the branch to Github and create a Pull Request, so that others can see what you are up to.
 1. **Rebase:** Make sure, that your branch is up to date. If not, rebase.
-Review: When the feature is ready, ask a fellow teammate for a review. Fix the issues the reviewer found, if any
+1. **Review:** When the feature is ready, ask a fellow teammate for a review. Fix the issues the reviewer found, if any
 1. **Merge:** When the reviewer gives green light, merge the Pull Request to master.
 
 A rule of thumb is that you should **never brake the master branch**. Master branch goes always to production.

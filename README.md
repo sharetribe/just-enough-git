@@ -1,4 +1,4 @@
-(This articla has been posted in Sharetribe blog)
+(This article has been posted in Sharetribe blog)
 
 # Just enought Git for a non-developer
 
@@ -10,23 +10,23 @@ The best way to learn is by doing. That's why this tutorial contains also an int
 
 ## Prerequisite
 
-The article concentrates on branching. I expect that you already have the basic knowledge of git, that is:
+The article concentrates on branching. I expect that you already have the basic knowledge of Git, that is:
 
 * You know how to access and use command-line
 * You have git installed
 * You have a Github account
 * You know how to `git clone` a repository
-* You know how to see current `git status`
+* You know how to view current `git status`
 * You know how to `git add` changes to next commit and how to `git commit` them
 * You know how to `git push` the commits to Github
-* You know how to `git pull` others’ commits from Github
-* You know what is a code branch
+* You know how to `git pull` others' commits from Github
+* You know what is a code branch, although you may not be familiar with them
 
-That is, you already know quite a lot! However, to be efficient with Git, there’s still a couple tricks you need to learn.
+That said, you already know quite a lot! However, to be efficient with Git, there are still a couple tricks you need to learn.
 
 ## The branching model.
 
-At Sharetribe, we you so called Github branching model. The model is pretty simple and easy to grasp. It goes like this:
+At Sharetribe, we you so a simple and minimalistic branching model, which goes like this:
 
 1. **Branch:** When you start working with a new feature/bug fix/document improvement/anything, you create a new branch.
 1. **Pull Request:** As soon as possible, even before the feature is ready, push the branch to Github and create a Pull Request, so that others can see what you are up to.
@@ -40,7 +40,7 @@ A rule of thumb is that you should **never brake the master branch**. Master bra
 
 ## Learning goals
 
-In order to follow that branching model, you need to learn a couple new git skills:
+In order to follow that branching model, you need to learn a couple new Git skills:
 
 * Your git is properly configured
 * You know how to create a branch
@@ -58,20 +58,18 @@ git config --global push.default current
 git config --global branch.autosetuprebase always
 ```
 
-Now you’re ready to start.
+Now you're ready to start.
 
 # Let the tutorial begin
 
-Let's get in to action!
-
 ### 1. Fork
 
-Go to the tutorial repository in Github, you can find it from https://github.com/sharetribe/just-enough-git. Click "Fork" on the upper right corner. This creates a copy of this tutorial in which you can try things out.
+Go to the tutorial repository in Github, https://github.com/sharetribe/just-enough-git. Click **Fork** on the upper right corner. This creates a copy of the tutorial under your username.
 
 Now, clone the repository to your local machine. On command-line, type:
 
 ```
-git clone git@github.com:sharetribe/just-enough-git.git
+git clone git@github.com:[your username here]/just-enough-git.git
 cd just-enough-git
 ls
 ```
@@ -80,7 +78,7 @@ You should now see the content of the repository. There are not that many files,
 
 ### 2. Let's add description!
 
-Now let's add a description to our website! Do you still remember the branching model? The first thing to do, was **Branch**. So, let's create a new branch.
+Now let's add a description to our website! Do you still remember the branching model? The first thing to do is **Branch**. So, let's create a new branch.
 
 First, type:
 
@@ -97,15 +95,15 @@ git branch -b add-description
 git status
 ```
 
-Congrats! You created a branch. `git status` shows you that you are currently in `add-description` branch.
+Congrats! You created a branch. `git status` shows you that you are currently in the newly created `add-description` branch.
 
-Let’s make a change to index.html. You can see that there’s a paragraph with class description, but the paragraph doesn’t have any content. Let’s add a description, so that the result is
+Let's make a change to `index.html`. You can see that there's an empty paragraph with class `description`. Add a description, so that the result is:
 
 ```
 <p class=“paragraph”>This is how you branch like a rockstar!</p>
 ```
 
-Next, use add, commit and push to save and push your changes.
+Next, save the file and use `git add`, `git commit` and `git push` to save and push your changes.
 
 ```
 git add index.html
@@ -113,19 +111,19 @@ git commit
 git push
 ```
 
-Now, go to your repository at Github. You can see that Github is suggesting you to make a Pull Request.
+Now, go to the Github repository. You can see that Github is suggesting you to create a new Pull request.
 
-Hit the Compare and create a Pull Request button and create you first Pull Request.
+Hit the **Compare and create a pull request**, add title and description to the Pull request and create it.
 
 The repository currently looks like this:
 
 ![1](diagrams/1.png)
 
-Now, go to Github to your Pull Request and click Merge pull request. Now you branch got merged to master. The repository now looks like this:
+Now, go to Github to your pull request and click **Merge pull request**. Now you branch got merged to master. The repository looks like this:
 
 ![2](diagrams/2.png)
 
-Your changes has now been merged to master, so you don't need your branch anymore. On the Pull Request page, click Delete branch.
+Your changes has now been merged to master, so you don't need your branch anymore. On the pull request page, click **Delete branch**.
 
 Now back to command-line. Jump back to master branch.
 
@@ -145,7 +143,7 @@ Let's recap what we've learned so far:
 
 * `git checkout -b [branchname]` creates a new branch
 * `git checkout [branchname]` jumps to another branch
-* In Github, you know how to create a Pull Request from your branch and how to merge it
+* In Github, you know how to create a pull request from your branch and how to merge it
 
 From the five step branching model, you already master 3 steps: **Branch**, **Pull request** and **Merge**. Next we learn how to **Rebase**.
 
@@ -153,7 +151,7 @@ From the five step branching model, you already master 3 steps: **Branch**, **Pu
 
 While you are working in your own branch, others might be pushing their changes to master branch. It's important to update your branch to include these changes. That way you avoid having a huge merge hell after working one week in isolation with your own branch.
 
-Now, let's create two new branches, `edit-description` and `edit-title` from the master branch:
+Let's create two new branches, `edit-description` and `edit-title` from the master branch:
 
 ```
 git checkout -b edit-description
@@ -165,7 +163,7 @@ Go and edit the `index.html` file, so that the description block looks like foll
 <p class="paragraph">This is how you rebase like a rockstar!</p>
 ```
 
-When your ready, push the changes to Github.
+When your ready, save the file and push the changes to Github.
 
 ```
 git add index.html
@@ -173,7 +171,7 @@ git commit
 git push
 ```
 
-Go to Github and make a new Pull request, but do not merge it this time.
+Go to Github and make a new pull request, but do not merge it this time.
 
 Now back to the command-line. At the moment you are in `edit-description` branch. Jump back to master:
 
@@ -193,7 +191,7 @@ Edit the `index.html` so that the title is now:
 <h1>Welcome to interactive Git and Github tutorial</h1>
 ```
 
-When your ready, push the changes to Github.
+Again, save and push the changes to Github.
 
 ```
 git add index.html
@@ -201,13 +199,13 @@ git commit
 git push
 ```
 
-Go to Github and make a new Pull request, but do not merge it this time.
+Go to Github and make a new Pull request, but do not merge it.
 
 Let's recap what we just did: We created two branches, `edit-description` and `edit-title`. We did Pull request for both of them. The repository currently looks like this:
 
 ![3](diagrams/3.png)
 
-Now go to Github and merge the `edit-title` Pull request.
+Now go to Github and merge the `edit-title` pull request.
 
 On command-line, go to master and pull the changes
 
@@ -220,17 +218,17 @@ Now the repository looks like this:
 
 ![4](diagrams/4.png)
 
-Now the `edit-description` branch is lagging behind. There are new changes in master, that are not included in `edit-description` branch. It's time to rebase.
+As you can see from the diagram, the `edit-description` branch is lagging behind. There are new changes in master that are not included in `edit-description` branch. It's time to rebase.
 
 Rebasing means that we change the "base" of the branch. Let's try it in practice.
 
-First, go to the branch that you want to update:
+Go to the branch that you want to update:
 
 ```bash
 git checkout edit-description
 ```
 
-Then, rebase it on top of the master branch.
+Rebase it on top of the master branch:
 
 ```bash
 git rebase master
@@ -242,21 +240,23 @@ Now the repository looks like this:
 
 The `edit-description` has now a new base. It has been placed on top of the latest changes on the master branch. Open the `index.html` file. You can see that the title includes now `and Github`, the change that was made in the `edit-title` branch.
 
-Now, let's push the updated branch to Github. This time we have to force push the branch, because it's history has changed:
+Push the updated branch to Github. This time we have to force push the branch, because its history has changed:
 
 ```
 git push --force
 ```
 
-**WARNING!** The main purpose of Git is to make sure you never lose any changed you've made. It's damn difficult to screw up things with Git so badly, that someone just lost his day's work. However, `--force` is the only command in Git which allows you to make catastrophical screw ups. So, be careful. Make sure you are in a correct branch when you force push. **NEVER force push on master branch.** **NEVER FORCE PUSH ON MASTER BRANCH**.
+**WARNING!** The main purpose of Git is to make sure you never lose any changed you've made. It's damn difficult to screw up things with Git so badly, that someone would lose his day's work. However, `--force` is the only command in Git which allows you to make catastrophical screw ups. So, be careful. Make sure you are in a correct branch when you force push. **NEVER force push on master branch.** **NEVER FORCE PUSH ON MASTER BRANCH**.
 
-**WARNING #2!** You ONLY need to force push after rebase. **Never force push, unless you have just rebased**
+**WARNING #2!** You ONLY need to force push after rebase. **Never force push, unless you have just rebased**.
 
-Let's recap again:
+Let's recap:
 
 * We have now learned how to `git rebase` your branch to include latest changes from master
+* We learned how to `git push --force` changes after rebase
+* We learned that with great `--force` comes a great responsibility.
 
-Sometimes two people edit the exactly same file and same line at the same time. In this situation, git doesn't know which one of the changes it should include. This causes so called merge conflict. When you update your branch, a conflict may happen. Next you'll learn how to solve a conflict.
+Sometimes two people edit the exactly same file and same line at the same time. In this situation, git doesn't know which one it should include. This causes so called merge conflict. When you rebase your branch, a conflict may happen. Next you'll learn how to solve a conflict.
 
 ### Resolving conflicts
 
@@ -264,13 +264,13 @@ Git is pretty good at merging branches together. However, if two people edit the
 
 Let's try this out.
 
-Remember that you have now an unmerged branch `edit-description`, which changed the `index.html` file description. Let's create yet another branch in which we edit the exact same file and line.
+Remember that you have now an unmerged branch `edit-description`, which changed the description paragraph in `index.html`. Create yet another branch in which we edit the description paragraph too.
 
 ```bash
 git checkout -b resolve-like-rockstar
 ```
 
-Go and edit the `index.html` file, so that the description block looks like following:
+Edit the `index.html` file, so that the description is following:
 
 ```html
 <p class="paragraph">This is how you resolve conflicts like a rockstar!</p>
@@ -286,7 +286,7 @@ git push
 
 Go to Github and make a new Pull request and merge it immediately.
 
-Now go to master and pull changes
+Now go to master and pull changes.
 
 ```
 git checkout master
@@ -297,7 +297,7 @@ Your repository looks now like this:
 
 ![6](diagrams/6.png)
 
-Yet again, we see that there's one branch, `edit-description` lagging behing. Let's rebase it.
+Yet again, we see that there's one branch, `edit-description`, that is lagging behing. Let's rebase it:
 
 ```bash
 git checkout edit-description
@@ -310,7 +310,7 @@ Whou! That did not go smoothly. Git is saying that there's a conflict in `index.
 CONFLICT (content): Merge conflict in index.html
 ```
 
-You can also see the situation with status command, type:
+You can also see this with status command, type:
 
 ```bash
 git status
@@ -347,7 +347,7 @@ Edit the file so that it include both changes and remove lines starting with `<<
 <p class="paragraph">This is how you rebase and resolve conflicts like a rockstar!</p>
 ```
 
-Save the file. Now that you've resolved the conflict, you have to mark the file as resolved. Do this with `git add`:
+Save the file. Now that you've resolved the conflict, you have to mark the file as resolved. Do it with `git add`:
 
 ```bash
 git add index.html
@@ -367,7 +367,7 @@ Now that we are done, we can continue:
 git rebase --continue
 ```
 
-Now Git moves to the next commit. You may have to resolve some merge conflicts again.
+Git moves to the next commit. You may have to resolve any additional conflicts.
 
 If anything goes wrong during the rebase, you can always enter `git rebase --abort`. It will cancel the whole rebase process.
 
@@ -377,7 +377,7 @@ Now it's time to be extra careful again, and force push our changes.
 git push --force
 ```
 
-And that's it! Now you have resolved a merge conflict. `edit-description` is now ready to be merged to master. Your repository looks now like this:
+And that's it! You just resolved a merge conflict. `edit-description` is now ready to be merged to master. Your repository looks now like this:
 
 ![6](diagrams/6.png)
 
@@ -394,4 +394,4 @@ Here's a list of commands you need when working with branches:
 * `git rebase --continue`: Continue rebasing after resolving conflicts
 * `git rebase --abort`: Abort rebasing
 
-And that's it! With these commands, you should be able to work with the development team and git!
+With these commands, you should be able to work with the development team and git!

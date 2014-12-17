@@ -1,6 +1,6 @@
 (This article has been posted in Sharetribe blog)
 
-# Just enought Git for a non-developer
+# Just enough Git for a non-developer
 
 At Sharetribe almost everyone is somehow dealing with the code. That's the spirit of a small tech startup. We use Git and Github for source code management.
 
@@ -24,7 +24,7 @@ The article concentrates on branching. I expect that you already have the basic 
 
 That said, you already know quite a lot! However, to be efficient with Git, there are still a couple tricks you need to learn.
 
-## The branching model.
+## The branching model
 
 At Sharetribe, we you so a simple and minimalistic branching model, which goes like this:
 
@@ -91,7 +91,7 @@ From the first line, you see that you are currently on `master` branch.
 `git checkout` is a command to jumps from branch to another. If you give it an option -b, it will create a new branch. Let’s try this. Type:
 
 ```
-git branch -b add-description
+git checkout -b add-description
 git status
 ```
 
@@ -100,7 +100,7 @@ Congrats! You created a branch. `git status` shows you that you are currently in
 Let's make a change to `index.html`. You can see that there's an empty paragraph with class `description`. Add a description, so that the result is:
 
 ```
-<p class=“paragraph”>This is how you branch like a rockstar!</p>
+<p class="paragraph">This is how you branch like a rockstar!</p>
 ```
 
 Next, save the file and use `git add`, `git commit` and `git push` to save and push your changes.

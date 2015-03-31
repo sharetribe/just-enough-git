@@ -1,12 +1,12 @@
-(This article has been posted in Sharetribe blog)
+(This article has been posted in funsies blog)
 
 # Just enough Git for a non-developer
 
-At Sharetribe almost everyone is somehow dealing with the code. That's the spirit of a small tech startup. We use Git and Github for source code management.
+At funsies almost everyone is somehow dealing with the code. That's the spirit of a small tech startup. We use Git and Github for source code management.
 
 This article was meant to be an internal document for our non-developers who have to small code changes every now and then, namely our designer and analytics expert. However, as this stuff might interest others, I decided to make the article in a form of a blog post.
 
-The best way to learn is by doing. That's why this tutorial contains also an interactive part. The tutorial can be found here https://github.com/sharetribe/just-enough-git. Feel free to make your own fork.
+The best way to learn is by doing. That's why this tutorial contains also an interactive part. The tutorial can be found here https://github.com/funsies/just-enough-git. Feel free to make your own fork.
 
 ## Prerequisite
 
@@ -26,7 +26,7 @@ That said, you already know quite a lot! However, to be efficient with Git, ther
 
 ## The branching model
 
-At Sharetribe, we you so a simple and minimalistic branching model, which goes like this:
+At funsies, we you so a simple and minimalistic branching model, which goes like this:
 
 1. **Branch:** When you start working with a new feature/bug fix/document improvement/anything, you create a new branch.
 1. **Pull Request:** As soon as possible, even before the feature is ready, push the branch to Github and create a Pull Request, so that others can see what you are up to.
@@ -64,7 +64,7 @@ Now you're ready to start.
 
 ### 1. Fork
 
-Go to the tutorial repository in Github, https://github.com/sharetribe/just-enough-git. Click **Fork** on the upper right corner. This creates a copy of the tutorial under your username.
+Go to the tutorial repository in Github, https://github.com/funsies/just-enough-git. Click **Fork** on the upper right corner. This creates a copy of the tutorial under your username.
 
 Now, clone the repository to your local machine. On command-line, type:
 

@@ -26,7 +26,7 @@ That said, you already know quite a lot! However, to be efficient with Git, ther
 
 ## The branching model
 
-At Sharetribe, we you so a simple and minimalistic branching model, which goes like this:
+At Sharetribe, we use a simple and minimalistic branching model, which goes like this:
 
 1. **Branch:** When you start working with a new feature/bug fix/document improvement/anything, you create a new branch.
 1. **Pull Request:** As soon as possible, even before the feature is ready, push the branch to Github and create a Pull Request, so that others can see what you are up to.
@@ -210,7 +210,7 @@ Now go to Github and merge the `edit-title` pull request.
 On command-line, go to master and pull the changes
 
 ```
-git chechkout master
+git checkout master
 git pull
 ```
 

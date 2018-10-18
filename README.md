@@ -100,7 +100,7 @@ Congrats! You created a branch. `git status` shows you that you are currently in
 Let's make a change to `index.html`. You can see that there's an empty paragraph with class `description`. Add a description, so that the result is:
 
 ```
-<p class="paragraph">This is how you branch like a rockstar!</p>
+<p class="description">This is how you branch like a rockstar!</p>
 ```
 
 Next, save the file and use `git add`, `git commit` and `git push` to save and push your changes.
@@ -160,7 +160,7 @@ git checkout -b edit-description
 Go and edit the `index.html` file, so that the description block looks like following:
 
 ```html
-<p class="paragraph">This is how you rebase like a rockstar!</p>
+<p class="description">This is how you rebase like a rockstar!</p>
 ```
 
 When your ready, save the file and push the changes to Github.
@@ -271,7 +271,7 @@ git checkout -b resolve-like-rockstar
 Edit the `index.html` file, so that the description is following:
 
 ```html
-<p class="paragraph">This is how you resolve conflicts like a rockstar!</p>
+<p class="description">This is how you resolve conflicts like a rockstar!</p>
 ```
 
 When your ready, push the changes to Github.
@@ -342,7 +342,7 @@ Open the `index.html` file in your editor and you will see this:
 Edit the file so that it include both changes and remove lines starting with `<<<<<<<`, `=======` and `>>>>>>>` so that the end result is:
 
 ```html
-<p class="paragraph">This is how you rebase and resolve conflicts like a rockstar!</p>
+<p class="description">This is how you rebase and resolve conflicts like a rockstar!</p>
 ```
 
 Save the file. Now that you've resolved the conflict, you have to mark the file as resolved. Do it with `git add`:

@@ -26,7 +26,7 @@ That said, you already know quite a lot! However, to be efficient with Git, ther
 
 ## The branching model
 
-At Sharetribe, we you so a simple and minimalistic branching model, which goes like this:
+At Sharetribe, we use a simple and minimalistic branching model, which goes like this:
 
 1. **Branch:** When you start working with a new feature/bug fix/document improvement/anything, you create a new branch.
 1. **Pull Request:** As soon as possible, even before the feature is ready, push the branch to Github and create a Pull Request, so that others can see what you are up to.
@@ -62,15 +62,28 @@ Now you're ready to start.
 
 # Let the tutorial begin
 
-### 1. Fork
+### 1. Copying the repository
 
-Go to the tutorial repository in Github, https://github.com/sharetribe/just-enough-git. Click **Fork** on the upper right corner. This creates a copy of the tutorial under your username.
+We want a separate copy of the repository, as it is extremely rare to work with forks at Sharetribe. Therefore, we'll create a completely separate repository for the purposes of this tutorial. 
 
-Now, clone the repository to your local machine. On command-line, type:
+Navigate to https://github.com/new in order to create a new repository.
+
+Make sure it's your account selected as owner, enter just-enough-git as the repository name, leave the repository as public and leave the README initialization checkbox unchecked.
+
+Now you can click `Create repository`. 
+
+Now, let's clone the original repository to your local machine, switch the remote to your version of the repository and push the contents there. 
+
+Usually, you don't need to deal with the remotes, but this makes the rest of the tutorial easier.
+
+On command-line, type:
 
 ```
-git clone git@github.com:[your username here]/just-enough-git.git
+git clone git@github.com:sharetribe/just-enough-git.git
 cd just-enough-git
+git remote rm origin
+git remote add origin git@github.com:<your-username>/just-enough-git.git
+git push -u origin master
 ls
 ```
 
